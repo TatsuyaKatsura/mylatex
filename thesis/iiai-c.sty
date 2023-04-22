@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template file for an IEE conference article
+%% Trim Size: A4 Paper
+%% iiai-conference.tex   :   29-2-08
+%% Tex file to use with iiai-conference.tex written in Latex2E.
+%% The content, structure, format and layout of this style file is the
+%% property of International Institute of Applied Informatics
+%% Copyright 2013 by International Institute of Applied Informatics
+%% All rights are reserved.
+%% Created by Satoshi Takahashi, UEC, Japan, Antoine Bossard, AIIT, Japan, Wen Gu, JAIST, Japan and Shun Okuhara, Mie University, Japan
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%set lengths
+\textheight 9.0in
+\textwidth 5.5in
+\topmargin 1.0in
+\oddsidemargin 1.4in
+\addtolength{\oddsidemargin}{-1.0in}
+\evensidemargin 0.9in
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\topmargin}{-1in}
+
+% pagestyle
+\pagestyle{empty}
+
+%Top page header items
+\def\vol#1{\def\fromvol{#1}}
+\def\fromvol{}
+\def\no#1{\def\fromno{#1}}
+\def\fromno{}
+\def\page#1{\def\frompage{#1}}
+\def\frompage{}
+\def\year#1{\def\fromyear{#1}}
+\def\fromyear{}
+\def\lastpage#1{\def\fromlastpage{#1}}
+\def\fromlastpage{}
+
+% title page
+\def\maketitle{\par
+ \begingroup
+ \def\thefootnote{\fnsymbol{footnote}}
+ \def\@makefnmark{\hbox 
+ to 10pt{$^{\@thefnmark}$\hss}} 
+ \if@twocolumn 
+ \twocolumn[\@maketitle] 
+ \else \newpage
+ \global\@topnum\z@ \@maketitle \fi\thispagestyle{empty}\@thanks
+ \endgroup
+ \setcounter{footnote}{0}
+ \let\maketitle\relax
+ \let\@maketitle\relax
+ \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
+\def\@maketitle{\newpage
+ \null
+ \noindent
+ {\@setsize\small{9pt}\ixpt\@ixpt
+IIAI Open Conference Publication Series\\
+ Volume title \\
+ Volume number, Article ID \\
+ DOI: https://doi.org/10.52731/XXXXXX\\
+%\fromyear, Vol.\ \fromvol, No.\ \fromno, \frompage\;-- \fromlastpage\
+ \baselineskip=8pt
+ \lineskiplimit=2pt
+ \lineskip=2pt \par}
+% \vspace{9mm}
+ \vspace{8mm}
+ \hspace{-7mm}  {\rm \LARGE \@title \baselineskip=0pt \par}
+  \vspace{10mm}
+  {\rm \Large \begin{tabular}[t]{c} \@author\end{tabular}\par} 
+  \vspace{7mm}
+  {\footnotesize\@date}
+\par}
+
+% header items
+\def\titlehead#1{\def\@titlehead{#1}}
+\def\@titlehead{}
+\def\authorshead#1{\def\@authorshead{#1}}
+\def\@authorshead{}
+
+
+ \def\ps@headings{%
+      \def\@oddfoot{\noindent\rlap{\footnotesize\hskip.5em\renewcommand{\sfdefault}{pnc}%%{pag}%%{phv}
+}\hfill{\footnotesize\renewcommand{\rmdefault}{ptm}\rmfamily \textit{Copyright \copyright \hskip1mm by IIAI. \hskip1mm Unauthorized reproduction of this article is prohibited.}}%\leftmark %%bySK
+\hfill}%
+      \def\@evenfoot{\noindent\rlap{\footnotesize\hskip.5em\renewcommand{\sfdefault}{pnc}%%{pag}%%{phv}
+}\hfill{\footnotesize\renewcommand{\rmdefault}{ptm}\rmfamily \textit{Copyright \copyright \hskip1mm by IIAI. \hskip1mm Unauthorized reproduction of this article is prohibited.}}%\leftmark %%bySK
+\hfill}%
+      \def\@evenhead{\noindent\rlap{\footnotesize\hskip.5em\renewcommand{\sfdefault}{pnc}%%{pag}%%{phv}
+\sffamily\textit{\thepage}}\hfill{\footnotesize\renewcommand{\rmdefault}{ptm}\rmfamily \textit{\@authorshead}}%\leftmark
+\hfill}%
+      \def\@oddhead{\hfill{\footnotesize\renewcommand{\rmdefault}{ptm}\rmfamily \textit{\@titlehead}%%\rightmark
+}\hfill\renewcommand{\sfdefault}{pnc}%%{pag}%%{phv}
+\llap{\footnotesize\sffamily\textit{\thepage}\hskip.5em}}%
+\let\@mkboth\markboth
+}
+%\def\ps@topheadings{%
+%      \let\@oddhead\@empty\let\@evenhead\@empty
+%      \def\@evenfoot{\hfill{\footnotesize\renewcommand{\sfdefault}{pnc}%%{pag}%%{phv}
+%\sffamily\textit{\textbf{\thepage}}}%\leftmark
+%\hfill}%
+%      \def\@oddfoot{\hfill%%\rightmark
+%\renewcommand{\sfdefault}{pnc}%%{pag}%%{phv}
+%{\footnotesize\sffamily\textit{\textbf{\thepage}}}\hfill}%
+%\let\@mkboth\markboth
+%}
+\pagestyle{headings}
+\headsep 8mm %%
+\footskip 14mm
+\baselineskip 14pt
