@@ -3,6 +3,7 @@
 
 
 
+
 %本章では既存のパターンマッチシステムの全体像と，改善が必要な問題点について述べ
 %る．2.1節で既存のパターンマッチシステムの全体像について述べ，2.2節に既存のシステムの問題点を挙げ，2.3節では2.2節で挙げた問題点に対する改善案について説明をする．
 
@@ -47,11 +48,11 @@ Upload the corpus file to be analyzed. Sentence breaks are recognized by punctua
 and question marks.
    \item[コーパス解析結果表示]\mbox{}\\
 %以下の図\ref{corpus_results}のようなコーパスの解析結果を表示する．
-
+\begin{comment}
 \begin{figure}[htbp]
  \begin{minipage}[b]{0.45\linewidth}
     \centering
-    \includegraphics[scale=.4]{figure/asa_results.png}
+    \includegraphics[keepaspectratio, scale=0.4]{figure/asa_results.png}
   \subcaption{ASA}\label{figure:3-1}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
@@ -61,12 +62,12 @@ and question marks.
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
     \centering
-    \includegraphics[keepaspectratio, scale=0.5]{figure/prolog木.png}
+    \includegraphics[keepaspectratio, scale=0.4]{figure/prolog木.png}
     \subcaption{木構造}\label{figure:3-2}
   \end{minipage}
   \caption{解析結果の表示}\label{corpus_results}
 \end{figure}
-
+\end{comment}
 
 \item[言語パターン構築]\mbox{}\\
 %Blocklyを用いて視覚的にブロックを組み合わせることで検索したい言語パターンを構築することがで
@@ -76,12 +77,14 @@ Using Blockly, you can construct the language pattern you want to search for by 
 By combining many different types of blocks, the information in the ASA analysis results can be complex. By combining many different types of blocks, it is possible to search for information on ASA parsing results in complex ways.
 Figure 1. Figure is a language pattern for extracting authors and works.
 
+\begin{comment}
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=.3]{figure/make_pattern.png}
   \caption{Blocklyによる「著者」と「作品」を抽出する言語パターン}
   %\label{blockly}
 \end{figure}
+\end{comment}
 
 %また構築した言語パターンを xml 形式のファイルにエクスポートすることができる．エク
 %スポートしたファイルをインポートすることもできる．
@@ -93,6 +96,7 @@ The exported file can also be imported.
 Displays the results of language pattern matching. The display format includes KWIC format, highlighting format, and
 table format. Figure  shows the result of executing language pattern matching using the language pattern in Figure 
 
+\begin{comment}
 \begin{figure}[htbp]
  \begin{minipage}[b]{0.45\linewidth}
     \centering
@@ -111,7 +115,9 @@ table format. Figure  shows the result of executing language pattern matching us
   \end{minipage}
   \caption{言語パターンマッチ結果表示}\label{display_result}
 \end{figure}
+\end{comment}
 \end{description}
+
 
 
 
@@ -119,6 +125,7 @@ table format. Figure  shows the result of executing language pattern matching us
 \subsubsection{バックエンド}
 %バックエンドはPython Web フレームワークである Djangoで構築されている． ASAによる解析にはasapy, Prolog処理系にはprologpyを用いて実装されている．
 The backend is built on Django, a Python web framework. It is implemented using asapy for analysis by ASA and prologpy for Prolog processing.
+
 \label{sec:2-1-2}
 \begin{description}
 \item[コーパス解析]\mbox{}\\
